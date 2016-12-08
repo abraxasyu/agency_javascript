@@ -10,7 +10,7 @@ var config = {
       "USER"    : "",
       "PASS"    : "",
       "HOST"    : "ec2-52-15-182-72.us-east-2.compute.amazonaws.com",
-      "PORT"    : "8080"
+      "PORT"    : "33333"
       //"DATABASE" : ""
     };
 
