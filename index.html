@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>AGENCY testing</title>
+    <!-- scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/core.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+	  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/mapping.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/raphael-2.1.4.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/justgage.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/FHIR.js"></script>
+    <script>
+      var socket = io();
+      socket.on('connect',function(){
+        socket.emit('clientconnected','message value');
+      });
+    </script>
+  </head>
+  <body>
+      <core id="core" style="width: 800px; height: 600px;margin:auto;margin-top:10px;display:block"></core>
+      <div id="mapid" style="width: 800px; height: 600px;margin:auto;margin-top:10px;"></div>
+      <div id="FHIR" style="width: 800px; height: 300px;margin:auto;margin-top:10px;"></div>
+  </body>
+</html>
