@@ -10,7 +10,7 @@ var config = {
       "USER"    : "",
       "PASS"    : "",
       "HOST"    : "ec2-52-15-182-72.us-east-2.compute.amazonaws.com",
-      "PORT"    : "33333"
+      "PORT"    : "8080"
       //"DATABASE" : ""
     };
 
@@ -40,5 +40,5 @@ io.on('connection', function(socket){
 });
 
 http.listen(8080, function(){
-  console.log('listening on *:33333');
+  console.log('listening on *:8080');
 });
