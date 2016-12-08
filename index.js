@@ -5,6 +5,16 @@ var io = require('socket.io')(http);
 
 var savedcanvas=null;
 
+
+var config = {
+      "USER"    : "",
+      "PASS"    : "",
+      "HOST"    : "ec2-52-15-182-72.us-east-2.compute.amazonaws.com",
+      "PORT"    : "8080",
+      "DATABASE" : ""
+    };
+
+
 app.use('/static', express.static('assets'));
 
 app.get('/', function(req, res){
@@ -29,6 +39,6 @@ io.on('connection', function(socket){
   });
 });
 
-http.listen(33333, function(){
-  console.log('listening on *:33333');
+http.listen(8080, function(){
+  console.log('listening on *:8080');
 });
