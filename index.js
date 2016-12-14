@@ -4,17 +4,17 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var aws = require('aws-sdk');
 
-var docClient = new aws.DynamoDB.DocumentClient();
+
 aws.config.update({
-  //region:"us-east-2",
+  region:"us-east-2",
   //endpoint:"arn:aws:dynamodb:us-east-2:987536304171:table/abrax_dynamoDB"
   endpoint:"dynamodb.us-east-2.amazonaws.com"
 });
-
+var docClient = new aws.DynamoDB.DocumentClient();
 var params = {
     TableName: "abrax_dynamoDB",
     Key:{
-        "userid":333
+        "userid":"333"
     }
 };
 
