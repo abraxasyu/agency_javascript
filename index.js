@@ -2,6 +2,31 @@ var express = require("express");
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var aws = require('aws-sdk');
+
+aws.config.update({
+  region:"us-east-2",
+  //endpoint:"arn:aws:dynamodb:us-east-2:987536304171:table/abrax_dynamoDB"
+  endpoint:"dynamodb.us-east-2.amazonaws.com"
+});
+var docClient = new aws.DynamoDB.DocumentClient();
+
+var params = {
+    TableName: "abrax_dynamoDB",
+    Key:{
+        "userid":333
+    }
+};
+
+docClient.get(params, function(err, data) {
+    if (err) {
+        console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
+    } else {
+        console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
+    }
+});
+
+
 
 var savedcanvas=null;
 
