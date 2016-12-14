@@ -12,6 +12,7 @@
     <script language="javascript" type="text/javascript" src="/static/raphael-2.1.4.min.js"></script>
     <script language="javascript" type="text/javascript" src="/static/justgage.js"></script>
     <script language="javascript" type="text/javascript" src="/static/FHIR.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/dynamodb.js"></script>
     <script>
       var socket = io();
       socket.on('connect',function(){
@@ -23,5 +24,14 @@
       <core id="core" style="width: 800px; height: 600px;margin:auto;margin-top:10px;display:block"></core>
       <div id="mapid" style="width: 800px; height: 600px;margin:auto;margin-top:10px;"></div>
       <div id="FHIR" style="width: 800px; height: 300px;margin:auto;margin-top:10px;"></div>
+      <div id="dynamodb" style="width: 800px; height: 300px;margin:auto;margin-top:10px;">
+          userid:<br>
+          <input type="text" id="userid" value="xxx">
+          <br>
+          testval:<br>
+          <input type="text" id="testval" value="yyy">
+          <br><br>
+          <button type="button" id="submittodynamodb">Submit</button>
+      </div>
   </body>
 </html>
